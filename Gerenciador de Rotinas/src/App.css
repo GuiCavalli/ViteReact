@@ -1,4 +1,4 @@
-/* Estilo da Container Principal */
+
 .container-principal {
   display: flex; 
   justify-content: space-between; 
@@ -6,7 +6,7 @@
   gap: 20px;
 }
 
-/* Estilo principal da .app */
+
 .app {
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-/* Estilo da .edit */
+
 .edit {
   width: 100%; 
   padding: 60px;
