@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // Estado para controlar a visibilidade do formulário das rotinas
+  // Estado que controla a visibilidade do formulário das rotinas
   const [formulario, setFormulario] = useState(false);
 
   // Estado para armazenar todas as rotinas
@@ -13,15 +13,15 @@ function App() {
     nome: '',
     objetivo: '',
     dataDeExecucao: '',
-    horarioDeExecucao: '', // Novo campo para o horário
-    tempoDecorrido: null, // Para armazenar o tempo decorrido do temporizador
-    horarioConclusao: null // Para armazenar o horário de conclusão
+    horarioDeExecucao: '', 
+    tempoDecorrido: null, 
+    horarioConclusao: null 
   });
 
-  // Estado para armazenar os comentários (não afeta a listaRotinas)
+  // Armazenar os comentários
   const [comentarios, setComentarios] = useState({});
 
-  // Estado para armazenar o termo de pesquisa digitado pelo usuário
+  // Estado que armazena o a pesquisa digitada pelo usuário
   const [termoDePesquisa, setTermoDePesquisa] = useState('');
 
   // Estado para armazenar a mensagem de parabenização
@@ -30,7 +30,7 @@ function App() {
   // Estado para controlar se uma nova rotina foi concluída
   const [ultimaRotinaConcluida, setUltimaRotinaConcluida] = useState(null);
 
-  // Função para lidar com mudanças nos campos de entrada do formulário
+  // Função que lida com as mudanças nos campos de entrada do formulário
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setRotina({
@@ -39,12 +39,12 @@ function App() {
     });
   };
 
-  // Função para lidar com o envio do formulário
+  // Envio do formulário
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newRoutine = {
       ...rotina,
-      id: Date.now(), // Gera um ID único
+      id: Date.now(), // Isso aqui gera um id unico
       concluido: false,
       tempoDecorrido: null,
       horarioConclusao: null,
@@ -61,7 +61,7 @@ function App() {
     setFormulario(false);
   };
 
-  // Função para alternar o status de conclusão da rotina
+  // Alternar o status da conclusão da rotina
   const toggleTaskCompletion = (id) => {
     const updatedTasks = [...listaRotinas];
     const rotinaToUpdate = updatedTasks.find((rotina) => rotina.id === id);
@@ -80,11 +80,11 @@ function App() {
     setListaRotinas(updatedTasks);
   };
 
-  // Função para excluir rotina
+  // Excluir rotina
   const deleteRoutine = (id) => {
     const updatedTasks = listaRotinas.filter((rotina) => rotina.id !== id);
     setListaRotinas(updatedTasks);
-    // Também excluir o comentário associado
+    // Aqui foi necessario fazer com que seja excluido o comentario também
     setComentarios((prev) => {
       const updatedComentarios = { ...prev };
       delete updatedComentarios[id];
@@ -97,7 +97,7 @@ function App() {
     rotina.nome.toLowerCase().includes(termoDePesquisa.toLowerCase())
   );
 
-  // useEffect para exibir a mensagem de parabenização quando uma rotina for concluída
+  // Exibe a mensagem de parabens
   useEffect(() => {
     if (ultimaRotinaConcluida) {
       setMensagem('Parabéns! Você concluiu sua rotina');
@@ -107,7 +107,7 @@ function App() {
     }
   }, [ultimaRotinaConcluida]);
 
-  // useEffect para iniciar o temporizador quando o horário de execução for alcançado
+  //inicia o temporizador quando o horário de execução for alcançado
   useEffect(() => {
     const timers = listaRotinas.map((rotina, index) => {
       if (!rotina.concluido && rotina.dataDeExecucao && rotina.horarioDeExecucao) {
@@ -135,7 +135,7 @@ function App() {
     };
   }, [listaRotinas]);
 
-  // Função para formatar o tempo decorrido em horas, minutos e segundos
+  // Aqui formata o tempo decorrido em horas, minutos e segundos
   const formatTime = (milliseconds) => {
     const totalSeconds = Math.floor(milliseconds / 1000);
     const hours = Math.floor(totalSeconds / 3600);
@@ -144,13 +144,13 @@ function App() {
     return `${hours}h ${minutes}m ${seconds}s`;
   };
 
-  // Organizando as rotinas para mostrar as não concluídas primeiro
+  // Aqui é feito a organização das rotinas para serem exebidas por primeiro ou por ultimo
   const listaRotinasOrdenadas = [
     ...listaRotinas.filter(rotina => !rotina.concluido),
     ...listaRotinas.filter(rotina => rotina.concluido),
   ];
 
-  // Função para lidar com o envio de um comentário
+  // Função para lidar com o envio de comentário
   const handleCommentChange = (id, comment) => {
     setComentarios((prev) => ({
       ...prev,
@@ -258,7 +258,7 @@ function App() {
         </ul>
       </div>
 
-      {/* Exibição das rotinas e campo de comentário */}
+      {/* Exibe a lista das rotinas podendo comentar e excluir */}
       <div className="edit">
         <div className="texto-edit">
           <h1 className="titulo-edit">Lista das suas rotinas!</h1>
@@ -273,7 +273,7 @@ function App() {
                 <div className="rotina-info">
                   <strong>{rotina.nome}</strong>
                 </div>
-                {/* Campo de comentário */}
+                
                 <textarea
                   className="comentario-rotina"
                   placeholder="Adicione um comentário..."
