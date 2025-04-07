@@ -6,7 +6,6 @@
   gap: 20px;
 }
 
-
 .app {
   display: flex;
   flex-direction: column;
@@ -18,7 +17,6 @@
   align-items: center; 
   text-align: center;
 }
-
 
 .edit {
   width: 100%; 
@@ -45,7 +43,6 @@
   align-items: center;
 }
 
-/* Formulário de rotina */
 .formulario-rotina {
   background-color: #fff;
   padding: 4%;
@@ -89,7 +86,7 @@
   transform: scale(1.05);
 }
 
-/* -------------------------- Botões e Interações -------------------- */
+/* --------------Botões e Interações ---------------- */
 
 .adicionar-rotina {
   background-color: #555;
@@ -108,7 +105,7 @@
   transform: scale(1.05);
 }
 
-/* ------------------------- Pesquisa e Listagem --------------------- */
+/* -------------- Pesquisa e Listagem ------------- */
 .seccao-pesquisa {
   display: flex;
   justify-content: center;
@@ -127,7 +124,6 @@
   justify-content: center;
 }
 
-/* Lista de Rotinas */
 .lista-rotina {
   list-style-type: none;
   padding: 0;
@@ -137,6 +133,7 @@
   flex-grow: 1;
 }
 
+/* Esse é do app*/
 .item-rotina {
   background-color: #fff;
   padding: 3%;  /* Pode ajustar o padding se necessário */
@@ -147,9 +144,10 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1em;
-  width: 100%; /* Ajusta a largura para ocupar 100% do espaço disponível */
+  width: 100%;
 }
 
+/* Esse é do edit*/
 .item-rotinaa {
   background-color: #fff;
   padding: 3%;
@@ -158,7 +156,7 @@
   box-shadow: 0 2% 5% rgba(0, 0, 0, 0.1);
   display: flex;
   font-size: 1em;
-  width: 100%; /* Ajusta a largura para 100% para se adaptar a diferentes telas */
+  width: 100%; 
   flex-direction: column;
   box-sizing: border-box; /* Garante que padding não afete a largura */
 }
@@ -181,7 +179,6 @@
 
 /* ---------------------------- Mensagens --------------------------- */
 
-/* Mensagem de Parabéns */
 .mensagem-parabens {
   margin-top: 20px;
   padding: 10px;
@@ -196,19 +193,18 @@
 /* Adicionando a altura fixa para o campo de comentário */
 .comentario-rotina {
   width: 100%;
-  height: 60px; /* Definindo uma altura fixa */
+  height: 60px; /* Define uma altura fixa */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 10px;
   font-size: 1em;
   box-sizing: border-box;
-  resize: none; /* Desabilitando o redimensionamento */
+  resize: none; /* Tira o redimensionamento */
 }
 
 /* ---------------------------- Div Edit --------------------------- */
 
-/* Estilo do botão de excluir */
 .botao-excluir {
   background-color: #000000;
   color: white;
@@ -239,7 +235,7 @@
 
 /* ---------------------------- Responsividade ---------------------- */
 
-/* Responsividade para telas médias (max-width: 768px) */
+/*Esse é pra telas medias tipo tablet */
 @media (max-width: 768px) {
   .container-principal {
     flex-direction: column;
@@ -247,8 +243,8 @@
   }
 
   .app, .edit {
-    width: 100%; /* Garante que a div .app e .edit ocupem toda a largura da tela */
-    padding: 30px; /* Adiciona um pequeno padding para que não fique colado nas bordas */
+    width: 100%; 
+    padding: 30px; 
   }
 
   .seccao-rotina, .seccao-pesquisa {
@@ -267,26 +263,26 @@
     margin-top: 5%;
   }
 
-  /* Adiciona mais responsividade na div edit */
+
   .edit {
-    width: 100%; /* Faz a div .edit ocupar toda a largura disponível */
+    width: 100%; 
     padding-right: 0; /* Remove o padding-right para melhorar o layout em telas pequenas */
-    padding-left: 0; /* Ajusta o padding-left também para uma melhor exibição */
-    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+    padding-left: 0; /* Remove o padding-left também para uma melhor exibição */
+    box-sizing: border-box; 
   }
 
   .item-rotina {
     font-size: 0.9em; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 10px; /* Ajusta o padding para o item de rotina */
+    padding: 10px; 
   }
 
   .botao-excluir {
-    font-size: 0.9em; /* Ajusta o tamanho do botão excluir */
-    padding: 6px 10px; /* Ajusta o padding do botão excluir */
+    font-size: 0.9em; 
+    padding: 6px 10px; 
   }
 }
 
-/* Responsividade para telas pequenas (max-width: 480px) */
+/* Aqui a reposnividade é para telas pequenas como de celulares */
 @media (max-width: 480px) {
   .adicionar-rotina {
     font-size: 1.2em;
@@ -302,32 +298,31 @@
     font-size: 0.95em;
   }
 
-  /* Ajuste no item de rotina */
   .item-rotina {
-    font-size: 0.8em; /* Reduz o tamanho da fonte ainda mais em telas pequenas */
-    padding: 8px;  /* Reduz o padding no item de rotina */
+    font-size: 0.8em; /* Reduz o tamanho da fonte em telas pequenas */
+    padding: 8px; 
     width: 100%;
   }
 
   .edit {
-    padding-right: 0; /* Remove o padding à direita da .edit */
-    padding-left: 0; /* Remove o padding à esquerda da .edit */
+    padding-right: 0; 
+    padding-left: 0; 
   }
 
   .botao-excluir {
-    font-size: 0.8em; /* Ajusta o tamanho do botão excluir */
-    padding: 6px 8px; /* Ajusta o padding do botão excluir */
+    font-size: 0.8em; 
+    padding: 6px 8px;
   }
 }
 
 @media (max-width: 768px) {
   .item-rotinaa {
-    width: 108%; /* Faz o item ocupar toda a largura disponível na tela */
-    padding: 10px; /* Ajusta o padding para ficar mais adequado em telas médias */
+    width: 108%; 
+    padding: 10px;
   }
 }
 
-/* Responsividade para telas pequenas (max-width: 480px) */
+/*  Aqui a reposnividade é para telas pequenas também como de celulares */
 @media (max-width: 480px) {
   .item-rotinaa {
     width: 108%; /* Faz o item ocupar toda a largura disponível */
