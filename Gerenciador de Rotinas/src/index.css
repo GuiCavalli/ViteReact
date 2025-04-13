@@ -1,0 +1,47 @@
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 80px); /* Subtrai a altura do título fixo */
+  flex-direction: row;  /* Organiza os componentes lado a lado */
+  background-color: #dadada;
+  color: #333;
+  padding: 2%;
+}
+
+.app-container {
+  width: 100%;
+  background-color: #fff;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  padding-top: 0px;
+  top: 0; /* Coloca o título no topo da página */
+  left: 0; /* Garante que o título ocupe toda a largura da página */
+  width: 100%; /* Faz o título ocupar toda a largura da tela */
+  text-align: center;  
+  margin: 0; 
+  padding: 10px 28px;  /* Adiciona um espaçamento ao redor do título */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Sombra */
+  z-index: 1000; /* Fica sobre o conteúdo */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Empilha os componentes na vertical */
+    padding-top: 0px; /* Garante o espaço para o título fixo */
+  }
+
+  .app-container{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
